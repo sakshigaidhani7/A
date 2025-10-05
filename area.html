@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Circle And Rectangle</title>
+    <style>
+    body {
+    background-color: rgb(225, 223, 220);
+  
+}
+
+.container1, .container2 {
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid black;
+    width: 300px;
+    background-color:rgb(99, 153, 163);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    margin-bottom: 15px;
+}
+
+input {
+    margin: 10px;
+    padding: 8px;
+    width: 80%;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid gray;
+    text-align: center;
+    font-size: 16px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-rect, .btn-circle {
+    background-color: rgb(92, 48, 70)
+    ;
+    color: white;
+}
+
+.btn-rect:hover, .btn-circle:hover {
+    background-color:rgb(92, 48, 70);
+    ;
+}
+
+.reset, .reset2 {
+    background-color: rgb(227, 10, 119)
+    ;
+    width: 80px;
+}
+
+.reset:hover, .reset2:hover {
+    background-color:rgb(204, 0, 102);
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container1">
+      <h3>Area Of Rectangle</h3>
+      
+        <input type="number" id="length" class="input1" placeholder="Enter length"><br>
+        <input type="number" id="breadth" class="input2" placeholder="Enter breadth"><br>
+        <p id="result"></p>
+      <button onclick="area()" class="btn-rect">
+        calculate
+    </button> <br>
+    <button onclick="reset()" class="reset">reset</button>
+    </div>
+
+    <div class="container2">
+      <h3>Area Of Circle</h3>
+      <input type="number" id="radius" class="input3" placeholder="Enter radius"><br>
+     
+      <p id="output"></p>
+    <button onclick="AreaOfCircle()" class="btn-circle">
+      calculate
+  </button> <br>
+  <br>
+    <button onclick="reset2()" class="reset2">reset</button>
+  </div>
+    <script>
+        function area(){
+            const lengthElement = document.getElementById("length");
+            const breadthElement = document.getElementById("breadth");
+            const resultElement = document.getElementById("result");
+          const total= parseInt( lengthElement.value) * parseInt( breadthElement.value);
+        
+          resultElement.innerText = `Area Of Rectangle: ${total}`;
+          const num1 = lengthElement.value;
+          const num2 = breadthElementElement.value;
+          if(num1 == ""){
+            alert("please enter first no.");
+            return;
+          }
+          if(num2==""){
+            alert("please enter second no.");
+            return;
+          }
+        }
+        function reset(){
+            const num1 = document.getElementById("length");
+            const num2 = document.getElementById("breadth");
+            const resultElement = document.getElementById("result");
+        num1.value="";
+        num2.value="";
+        resultElement.innerText = "-";
+    
+        }
+        function AreaOfCircle(){
+          const radiusElement = document.getElementById("radius");
+          const outputElement = document.getElementById("output");
+          const area=3.14*parseInt(radiusElement.value)*parseInt(radiusElement.value);
+          outputElement.innerText=`Area of Circle :${area}`;
+          const rad = radiusElement.value;
+         
+          if(rad == ""){
+            alert("please enter radius");
+            return;
+          }
+        
+        }
+
+
+
+    </script>
+</body>
+</html>
